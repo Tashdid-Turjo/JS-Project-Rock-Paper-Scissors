@@ -13,15 +13,44 @@ function getComputerChoice(max) {
 
 console.log(getComputerChoice(3));
 
-function getHumanChoice() {
-    // let answer = parseInt(prompt("Enter a number:"));
-    const inputButton = document.querySelector("#inputButton");
-    const log = document.querySelector("#log");
+function getHumanChoice(max) {
+    const humanchoice = 0 + max;
 
-    signButton.addEventListener("click", () => {
-        let sign = prompt("")
-    })
+    if (humanchoice === 0) {
+        return "Rock";
+    }
+    else if (humanchoice === 1) {
+        return "Paper";
+    }
+    else if (humanchoice === 2) {
+        return "Scissor";
+    }
+    else
+        return "Value should be 0 or 1 or 2";
 }
+
+console.log(getHumanChoice(3));
+
+
+
+
+
+
+
+// function getHumanChoice() {
+//     // let answer = parseInt(prompt("Enter a number:"));
+//     const inputButton = document.querySelector("#inputButton");
+//     const log = document.querySelector("#log");
+
+//     inputButton.addEventListener("click", () => {
+//         let sign = prompt("What's your sign?");
+
+//         if (sign === null) {
+//             log.innerText = "rock";
+//         }
+//         else if (sign.)
+//     })
+// }
 
 /* Using ARRAY for getComputerChoice function:
 
