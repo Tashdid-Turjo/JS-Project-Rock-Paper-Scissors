@@ -20,20 +20,22 @@ function getHumanChoice(humanchoice) {
     // const humanchoice = 0 + max;
 
     if (humanchoice === 0) {
-        console.log("You clicked Rock");
-        // return "Rock";
+        document.getElementById("message").textContent = "You clicked Rock";
+        // console.log("You clicked Rock");
     }
     else if (humanchoice === 1) {
-        console.log("You clicked Paper");
+        document.getElementById("message").textContent = "You clicked Paper";
+        // console.log("You clicked Paper");
     }
     else if (humanchoice === 2) {
-        console.log("You clicked Scissor");
+        document.getElementById("message").textContent = "You clicked Scissor";
+        // console.log("You clicked Scissor");
     }
     else
         return "Value should be 0 or 1 or 2";
 }
 
-console.log(getHumanChoice(3));
+// console.log(getHumanChoice(3));
 
 
 
