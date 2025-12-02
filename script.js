@@ -11,8 +11,8 @@ function getComputerChoice(max) {
         return "Scissor";
 }
 
-let computer = getComputerChoice(3);
-document.getElementById("computer-message").textContent = "Computer clicked " + computer;
+// let computer = getComputerChoice(3);
+// document.getElementById("computer-message").textContent = "Computer clicked " + computer;
 
 
 /////////////////////////////////////////////////////////////
@@ -28,6 +28,10 @@ function getHumanChoice(humanchoice) {
     }
     else
         document.getElementById("human-message").textContent = "You clicked Scissor";
+
+    let computer = getComputerChoice(3);
+    document.getElementById("computer-message").textContent = "Computer clicked " + computer;
+
 }
 
 
