@@ -1,5 +1,5 @@
 function getComputerChoice(max) {
-    const choice = Math.floor(Math.random() * max);
+    const choice = Math.floor(Math.random() * max); // here, Math.random()'s default value range -> (0 =< value < 1)
     
     if (choice === 0) {
         return "Rock";
@@ -11,7 +11,10 @@ function getComputerChoice(max) {
         return "Scissor";
 }
 
-console.log(getComputerChoice(3));
+// console.log(getComputerChoice(3));
+let computer = getComputerChoice(3);
+document.getElementById("message").textContent = "Computer clicked " + computer;
+
 
 function getHumanChoice(humanchoice) {
     // TODO: skipped prompt(), bcz, i want to add 3 different button.
