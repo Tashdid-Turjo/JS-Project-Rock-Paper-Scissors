@@ -13,17 +13,21 @@ function getComputerChoice(max) {
 
 console.log(getComputerChoice(3));
 
-function getHumanChoice(max) {
-    const humanchoice = 0 + max;
+function getHumanChoice(humanchoice) {
+    // TODO: skipped prompt(), bcz, i want to add 3 different button.
+    // sign = prompt();
+
+    // const humanchoice = 0 + max;
 
     if (humanchoice === 0) {
-        return "Rock";
+        console.log("You clicked Rock");
+        // return "Rock";
     }
     else if (humanchoice === 1) {
-        return "Paper";
+        console.log("You clicked Paper");
     }
     else if (humanchoice === 2) {
-        return "Scissor";
+        console.log("You clicked Scissor");
     }
     else
         return "Value should be 0 or 1 or 2";
