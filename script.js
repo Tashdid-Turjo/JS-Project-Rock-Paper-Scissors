@@ -1,5 +1,5 @@
 function getComputerChoice(max) {
-    const choice = Math.floor(Math.random() * max); // here, Math.random()'s default value range -> (0 =< value < 1)
+    const choice = Math.floor(Math.random() * max); // here, Math.random()'s default value range -> (0 =< value < 1). Math.floor omits the round part after a number.
     
     if (choice === 0) {
         return "Rock";
@@ -15,18 +15,19 @@ let computer = getComputerChoice(3);
 document.getElementById("computer-message").textContent = "Computer clicked " + computer;
 
 
+/////////////////////////////////////////////////////////////
 function getHumanChoice(humanchoice) {
     // TODO: skipped prompt(), bcz, i want to add 3 different button.
     // sign = prompt();
 
     if (humanchoice === 0) {
-        document.getElementById("message").textContent = "You clicked Rock";
+        document.getElementById("human-message").textContent = "You clicked Rock";
     }
     else if (humanchoice === 1) {
-        document.getElementById("message").textContent = "You clicked Paper";
+        document.getElementById("human-message").textContent = "You clicked Paper";
     }
     else
-        document.getElementById("message").textContent = "You clicked Scissor";
+        document.getElementById("human-message").textContent = "You clicked Scissor";
 }
 
 
