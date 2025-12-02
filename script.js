@@ -14,6 +14,7 @@ function getComputerChoice(max) {
 let computer = getComputerChoice(3);
 document.getElementById("computer-message").textContent = "Computer clicked " + computer;
 
+
 function getHumanChoice(humanchoice) {
     // TODO: skipped prompt(), bcz, i want to add 3 different button.
     // sign = prompt();
@@ -24,14 +25,9 @@ function getHumanChoice(humanchoice) {
     else if (humanchoice === 1) {
         document.getElementById("message").textContent = "You clicked Paper";
     }
-    else if (humanchoice === 2) {
-        document.getElementById("message").textContent = "You clicked Scissor";
-    }
     else
-        return "Value should be 0 or 1 or 2";
+        document.getElementById("message").textContent = "You clicked Scissor";
 }
-
-// console.log(getHumanChoice(3));
 
 
 
