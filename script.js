@@ -11,28 +11,21 @@ function getComputerChoice(max) {
         return "Scissor";
 }
 
-// console.log(getComputerChoice(3));
 let computer = getComputerChoice(3);
-document.getElementById("message").textContent = "Computer clicked " + computer;
-
+document.getElementById("computer-message").textContent = "Computer clicked " + computer;
 
 function getHumanChoice(humanchoice) {
     // TODO: skipped prompt(), bcz, i want to add 3 different button.
     // sign = prompt();
 
-    // const humanchoice = 0 + max;
-
     if (humanchoice === 0) {
         document.getElementById("message").textContent = "You clicked Rock";
-        // console.log("You clicked Rock");
     }
     else if (humanchoice === 1) {
         document.getElementById("message").textContent = "You clicked Paper";
-        // console.log("You clicked Paper");
     }
     else if (humanchoice === 2) {
         document.getElementById("message").textContent = "You clicked Scissor";
-        // console.log("You clicked Scissor");
     }
     else
         return "Value should be 0 or 1 or 2";
