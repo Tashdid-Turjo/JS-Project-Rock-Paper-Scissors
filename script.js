@@ -1,22 +1,32 @@
+let humanScore, computerScore;
+humanScore = 0;
+computerScore = 0;
+
+console.log(humanScore);
+console.log(computerScore);
+
+// !! Computer:
 function getComputerChoice(max) {
-    const choice = Math.floor(Math.random() * max); // here, Math.random()'s default value range -> (0 =< value < 1). Math.floor omits the round part after a number.
+    const computerchoice = Math.floor(Math.random() * max); // here, Math.random()'s default value range -> (0 =< value < 1). Math.floor omits the round part after a number.
     
-    if (choice === 0) {
+    if (computerchoice === 0) {
         return "Rock";
     }
-    else if (choice === 1) {
+    else if (computerchoice === 1) {
         return "Paper";
     }
-    else
+    else {
         return "Scissor";
+    }
 }
 
-// put these two lines inside getHumanChoice function, so that, by clicking any of 3 buttons, both Computer & Human's result is showing.
+
+// TODO: put these two lines inside getHumanChoice function, so that, by clicking any of 3 buttons, both Computer & Human's result is showing.
 // let computer = getComputerChoice(3);
 // document.getElementById("computer-message").textContent = "Computer clicked " + computer;
 
 
-/////////////////////////////////////////////////////////////
+// !! Human:
 function getHumanChoice(humanchoice) {
     // TODO: skipped prompt(), bcz, i want to add 3 different button.
     // sign = prompt();
@@ -27,8 +37,9 @@ function getHumanChoice(humanchoice) {
     else if (humanchoice === 1) {
         document.getElementById("human-message").textContent = "You clicked Paper";
     }
-    else
+    else {
         document.getElementById("human-message").textContent = "You clicked Scissor";
+    }
 
     let computer = getComputerChoice(3);
     document.getElementById("computer-message").textContent = "Computer clicked " + computer;
@@ -36,6 +47,7 @@ function getHumanChoice(humanchoice) {
 }
 
 
+// !! Win/Lose Condition:
 
 
 
