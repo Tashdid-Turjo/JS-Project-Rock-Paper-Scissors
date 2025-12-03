@@ -1,3 +1,4 @@
+// TODO: Odin advised to use it. But I haven't used this.
 // let humanScore, computerScore;
 // humanScore = 0;
 // computerScore = 0;
