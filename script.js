@@ -1,13 +1,12 @@
-let humanScore, computerScore;
-humanScore = 0;
-computerScore = 0;
+// let humanScore, computerScore;
+// humanScore = 0;
+// computerScore = 0;
 
-console.log(humanScore);
-console.log(computerScore);
 
+let computerchoice;
 // !! Computer:
 function getComputerChoice(max) {
-    const computerchoice = Math.floor(Math.random() * max); // here, Math.random()'s default value range -> (0 =< value < 1). Math.floor omits the round part after a number.
+    computerchoice = Math.floor(Math.random() * max); // here, Math.random()'s default value range -> (0 =< value < 1). Math.floor omits the round part after a number.
     
     if (computerchoice === 0) {
         return "Rock";
@@ -24,7 +23,6 @@ function getComputerChoice(max) {
 // TODO: put these two lines inside getHumanChoice function, so that, by clicking any of 3 buttons, both Computer & Human's result is showing.
 // let computer = getComputerChoice(3);
 // document.getElementById("computer-message").textContent = "Computer clicked " + computer;
-
 
 // !! Human:
 function getHumanChoice(humanchoice) {
@@ -44,31 +42,32 @@ function getHumanChoice(humanchoice) {
     let computer = getComputerChoice(3);
     document.getElementById("computer-message").textContent = "Computer clicked " + computer;
 
+    // !! Win/Lose (Nested Function):
+    function WinLose() {
+        if (humanchoice === computerchoice) {
+            console.log("tie");
+        }
+        else if ((humanchoice === 0 && computerchoice === 2) ||
+                (humanchoice === 1 && computerchoice === 0) ||
+                (humanchoice === 2 && computerchoice === 1)) {
+
+            console.log("Human wins");
+        }
+        else {
+            console.log("computer wins");
+        }
+    }
+
+    // calling WinLose function
+    WinLose();
+
 }
 
 
-// !! Win/Lose Condition:
 
 
 
-
-
-// function getHumanChoice() {
-//     // let answer = parseInt(prompt("Enter a number:"));
-//     const inputButton = document.querySelector("#inputButton");
-//     const log = document.querySelector("#log");
-
-//     inputButton.addEventListener("click", () => {
-//         let sign = prompt("What's your sign?");
-
-//         if (sign === null) {
-//             log.innerText = "rock";
-//         }
-//         else if (sign.)
-//     })
-// }
-
-/* Using ARRAY for getComputerChoice function:
+/* We can also use ARRAY for getComputerChoice function:
 
 function getComputerChoice() {
     const choices = ["Rock", "Paper", "Scissor"];
@@ -81,5 +80,3 @@ choices[1] = "Paper"
 choices[2] = "Scissor"
 
 */
-
-
