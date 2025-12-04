@@ -19,30 +19,30 @@ function Restart() {
 
 // !! startGame Function:
 function startGame() {
-    if (totalRounds === 0) {
-        totalRounds = Number(document.getElementById("rounds-input").value);
-        
-        
-
+    
+    totalRounds = Number(document.getElementById("rounds-input").value);    
         if (!totalRounds || totalRounds <= 0) {
             alert("Please enter a valid number of rounds.");
             totalRounds = 0;
             return;
         }
 
-    else if (roundsPlayed >= totalRounds) {
-        location.reload();
-    }
-        // // Reset all after final result
-        // // roundsPlayed = 0;
-        // // totalRounds = 0;
-        // tieScore = 0;
-        // computerScore = 0;
-        // humanScore = 0;
-
-        // return;
-    }
+    // Reset counters in memory
+    roundsPlayed = 0;
+    tieScore = 0;
+    computerScore = 0;
+    humanScore = 0;
     
+    // Reset counter texts on the page
+    document.getElementById("Counter-message-tie").textContent = "Tie: " + tieScore;
+    document.getElementById("Counter-message-computer").textContent = "Computer: " + computerScore;
+    document.getElementById("Counter-message-human").textContent = "Human: " + humanScore;
+
+    // Clear previous messages
+    document.getElementById("computer-message").textContent = "";
+    document.getElementById("human-message").textContent = "";
+    document.getElementById("WinLose-message").textContent = "";
+    document.getElementById("final-result").textContent = "";
 }
 
 
@@ -68,19 +68,16 @@ function getComputerChoice(max) {
 
 // !! Human Function:
 function getHumanChoice(humanchoice) {
+    if (totalRounds === 0) {
+    alert("Click Start Game first.");
+    return;
+    }
+
     if (roundsPlayed >= totalRounds) {
-        alert("Game over. Change the rounds number to start a new game.");
-        
-
-        // Reset all after final result
-        roundsPlayed = 0;
-        totalRounds = 0;
-        tieScore = 0;
-        computerScore = 0;
-        humanScore = 0;
-
+        alert("Game over. Click Start Game to start a new game.");
         return;
     }
+
 
     if (humanchoice === 0) {
         document.getElementById("human-message").textContent = "You clicked Rock";

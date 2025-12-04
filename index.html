@@ -4,19 +4,29 @@
     <meta charset="utf-8" />
     <title>Number guessing game</title>
   </head>
-  <body> 
+  <body>
+    <!--  -->
+    <input id="rounds-input" type="number" min="1" placeholder="How many rounds?">
+    <button onclick="startGame()">Start Game</button>
+    <button onclick="Restart()">Restart</button><br><br>
+    <!--  -->
+
     <button onclick="getHumanChoice(0)">Rock</button>
     <button onclick="getHumanChoice(1)">Paper</button>
     <button onclick="getHumanChoice(2)">Scissor</button>
-
+    
     <p id="computer-message"></p>
     <p id="human-message"></p>
 
-    <p id="WinLose-message"></p>
+    <p id="WinLose-message"></p><br><br><br>
+
     <p id="Counter-message-tie"></p>
     <p id="Counter-message-human"></p>
     <p id="Counter-message-computer"></p>
 
+    <!--  -->
+    <p id="final-result"></p>
+    <!--  -->
     <script src="script.js"></script>
   </body>
 </html>
