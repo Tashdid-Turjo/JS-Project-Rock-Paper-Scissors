@@ -18,8 +18,27 @@ function Restart() {
 
 
 // !! resetStartButton Function:
-// TODO: This function helps to solve- Switch "Restart Game" button back to "Start Game" when rounds input changes.
+// TODO: This function helps to solve- Switch "Restart Game" button back to "Start Game" when rounds input changes. It also omit everything like who won, scores etc.
 function resetStartButton() {
+    // Reset counters in memory
+    totalRounds = 0;
+    roundsPlayed = 0;
+    tieScore = 0;
+    humanScore = 0;
+    computerScore = 0;
+
+    // Reset counter texts on the page
+    document.getElementById("Counter-message-tie").textContent = "Tie: " + tieScore;
+    document.getElementById("Counter-message-computer").textContent = "Computer: " + computerScore;
+    document.getElementById("Counter-message-human").textContent = "Human: " + humanScore;
+
+    // Clear previous messages
+    document.getElementById("computer-message").textContent = "";
+    document.getElementById("human-message").textContent = "";
+    document.getElementById("WinLose-message").textContent = "";
+    document.getElementById("final-result").textContent = "";
+
+    // for making the button back to "Start Game"
     const btn2 = document.getElementById("start-button");
     btn2.textContent = "Start Game";
     btn2.onclick = startGame;
