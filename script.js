@@ -16,7 +16,7 @@ function Restart() {
     location.reload();
 }
 
-
+ 
 // !! resetStartButton Function:
 // TODO: This function helps to solve- Switch "Restart Game" button back to "Start Game" when rounds input changes. It also omit everything like who won, scores etc.
 function resetStartButton() {
