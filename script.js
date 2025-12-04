@@ -70,7 +70,7 @@ function getHumanChoice(humanchoice) {
     // Changing Start Game button -> Restart Game Button:
     document.getElementById("start-button").textContent = "Restart Game";
     document.getElementById("start-button").onclick = Restart;
-
+ 
     if (totalRounds === 0) {
     alert("Click Start Game first.");
     return;
