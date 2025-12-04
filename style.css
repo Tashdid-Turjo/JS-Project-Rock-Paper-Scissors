@@ -1,4 +1,30 @@
-.body {
-    background-color: yellow;
+/* In JS, shortcut button for keyboard, like- "/", "enter", "R", "P", "S"
+will be added soon. */
+
+body {
+    background-color: rgb(255, 174, 0);
+    color: blue;
+}
+
+.full {
+    background-color: aliceblue;
+    border-radius: 20px;
+    height: 500px;
+    width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.counter {
+    
+}
+
+.input-start-reload{
+    font-family: 'Times New Roman', Times, serif;
+    /* font-size: 100px; */
+
+
 }
 

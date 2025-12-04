@@ -3,30 +3,44 @@
   <head> 
     <meta charset="utf-8" />
     <title>Number guessing game</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
   </head> 
   <body>
-    <!--  --> 
-    <input id="rounds-input" type="number" min="1" placeholder="How many rounds?" oninput="resetStartButton()">
-    <button id="start-button" onclick="startGame()">Start Game</button>
-    <button onclick="Restart()">Reload</button><br><br>
-    <!--  -->
- 
-    <button onclick="getHumanChoice(0)">Rock</button>
-    <button onclick="getHumanChoice(1)">Paper</button>
-    <button onclick="getHumanChoice(2)">Scissor</button>
-    
-    <p id="computer-message"></p>
-    <p id="human-message"></p>
+    <div class="full">
+      <div class="counter">
+        <p id="Counter-message-tie"></p>
+        <p id="Counter-message-human"></p>
+        <p id="Counter-message-computer"></p>
+      </div>
 
-    <p id="WinLose-message"></p><br><br><br>
+      <div class="input-start-reload">
+        <input id="rounds-input" type="number" min="1" placeholder="How many rounds?" oninput="resetStartButton()">
+        <button id="start-button" onclick="startGame()">Start Game</button>
+        <button onclick="Restart()">Reload</button><br><br>
+      </div>
 
-    <p id="Counter-message-tie"></p>
-    <p id="Counter-message-human"></p>
-    <p id="Counter-message-computer"></p>
+      <div class="r-p-c-button">
+        <button onclick="getHumanChoice(0)">Rock</button>
+        <button onclick="getHumanChoice(1)">Paper</button>
+        <button onclick="getHumanChoice(2)">Scissor</button>
+      </div>
 
-    <!--  -->
-    <p id="final-result"></p>
-    <!--  -->
+      <div class="computer-human-message">
+        <p id="computer-message"></p>
+        <p id="human-message"></p>
+      </div>
+
+      <div class="win-lose">
+        <p id="WinLose-message"></p><br><br><br>
+      </div>
+      
+      <div class="final">
+        <p id="final-result"></p>
+      </div>
+    </div>
+
+    <!-- JS File -->
     <script src="script.js"></script>
   </body>
 </html>
