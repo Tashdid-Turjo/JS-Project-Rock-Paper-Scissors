@@ -1,11 +1,15 @@
 // TODO: Odin advised to use it. But I haven't used this.
-// let humanScore, computerScore;
-// humanScore = 0;
-// computerScore = 0;
 
+
+let tieScore = 0;
+document.getElementById("Counter-message-tie").textContent = "Tie: " + tieScore;
+let computerScore = 0;
+document.getElementById("Counter-message-computer").textContent = "Computer: " + computerScore;
+let humanScore = 0;
+document.getElementById("Counter-message-human").textContent = "Human: " + humanScore;
 
 let computerchoice;
-// !! Computer:
+// !! Computer Function:
 function getComputerChoice(max) {
     computerchoice = Math.floor(Math.random() * max); // here, Math.random()'s default value range -> (0 =< value < 1). Math.floor omits the round part after a number.
     
@@ -25,7 +29,7 @@ function getComputerChoice(max) {
 // let computer = getComputerChoice(3);
 // document.getElementById("computer-message").textContent = "Computer clicked " + computer;
 
-// !! Human:
+// !! Human Function:
 function getHumanChoice(humanchoice) {
     // TODO: skipped prompt(), bcz, i want to add 3 different button.
     // sign = prompt();
@@ -47,6 +51,8 @@ function getHumanChoice(humanchoice) {
     function WinLose() {
         if (humanchoice === computerchoice) {
             document.getElementById("WinLose-message").textContent = "Tie";
+            tieScore += 1;
+            document.getElementById("Counter-message-tie").textContent = "Tie: " + tieScore;
             // console.log("tie");
         }
         else if ((humanchoice === 0 && computerchoice === 2) ||
@@ -54,10 +60,14 @@ function getHumanChoice(humanchoice) {
                  (humanchoice === 2 && computerchoice === 1)) {
 
             document.getElementById("WinLose-message").textContent = "Human wins";
+            humanScore += 1;
+            document.getElementById("Counter-message-human").textContent = "Human: " + humanScore;
             // console.log("Human wins");
         }
         else {
             document.getElementById("WinLose-message").textContent = "Computer wins";
+            computerScore += 1;
+            document.getElementById("Counter-message-computer").textContent = "Computer: " + computerScore;
             // console.log("Computer wins");
         }
     }
