@@ -11,9 +11,18 @@ document.getElementById("Counter-message-human").textContent = "Human: " + human
 let computerchoice;
 
 
-// !! Restart Function:
+// !! Restart(Basically- Reload) Function:
 function Restart() {
     location.reload();
+}
+
+
+// !! resetStartButton Function:
+// TODO: This function helps to solve- Switch "Restart Game" button back to "Start Game" when rounds input changes.
+function resetStartButton() {
+    const btn2 = document.getElementById("start-button");
+    btn2.textContent = "Start Game";
+    btn2.onclick = startGame;
 }
 
 
@@ -72,8 +81,8 @@ function getHumanChoice(humanchoice) {
     document.getElementById("start-button").onclick = Restart;
  
     if (totalRounds === 0) {
-    alert("Click Start Game first.");
-    return;
+        alert("Click Start Game first.");
+        return;
     }
 
     if (roundsPlayed >= totalRounds) {
