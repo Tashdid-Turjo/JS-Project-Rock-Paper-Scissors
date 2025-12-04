@@ -19,7 +19,6 @@ function Restart() {
 
 // !! startGame Function:
 function startGame() {
-    
     totalRounds = Number(document.getElementById("rounds-input").value);    
         if (!totalRounds || totalRounds <= 0) {
             alert("Please enter a valid number of rounds.");
@@ -68,6 +67,10 @@ function getComputerChoice(max) {
 
 // !! Human Function:
 function getHumanChoice(humanchoice) {
+    // Changing Start Game button -> Restart Game Button:
+    document.getElementById("start-button").textContent = "Restart Game";
+    document.getElementById("start-button").onclick = Restart;
+
     if (totalRounds === 0) {
     alert("Click Start Game first.");
     return;
@@ -132,13 +135,11 @@ function getHumanChoice(humanchoice) {
         }
         
         document.getElementById("final-result").textContent = finalMsg;
-        
-        // // Reset all after final result
-        // roundsPlayed = 0;
-        // totalRounds = 0;
-        // tieScore = 0;
-        // computerScore = 0;
-        // humanScore = 0;
+
+        // Changing Restart Game button -> Start Game Button:
+        const btn = document.getElementById("start-button");
+        btn.textContent = "Start Game";
+        btn.onclick = startGame;
     }
 
 }
