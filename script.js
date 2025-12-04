@@ -95,21 +95,26 @@ function getComputerChoice(max) {
 
 // !! Human Function:
 function getHumanChoice(humanchoice) {
-    // Changing Start Game button -> Restart Game Button:
-    document.getElementById("start-button").textContent = "Restart Game";
-    document.getElementById("start-button").onclick = Restart;
- 
+    // 1) First: make sure game is started:
     if (totalRounds === 0) {
         alert("Click Start Game first.");
         return;
     }
 
+    // 2) Then: stop playing if rounds are already finished:
     if (roundsPlayed >= totalRounds) {
         alert("Game over. Click Start Game to start a new game.");
         return;
     }
 
+    // 3) NOW it’s safe to convert Start → Restart (game is actually running):
+    const btn = document.getElementById("start-button");
+    if(btn.textContent === "Start Game") {
+        btn.textContent = "Restart Game";
+        btn.onclick = Restart;
+    }
 
+    // Shows human's choice:
     if (humanchoice === 0) {
         document.getElementById("human-message").textContent = "You clicked Rock";
     }
@@ -150,6 +155,7 @@ function getHumanChoice(humanchoice) {
 
     roundsPlayed++;
 
+    // Final Result:
     if (roundsPlayed === totalRounds) {
         let finalMsg;
         if (humanScore > computerScore) {
