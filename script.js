@@ -46,16 +46,19 @@ function getHumanChoice(humanchoice) {
     // !! Win/Lose (Nested Function):
     function WinLose() {
         if (humanchoice === computerchoice) {
-            console.log("tie");
+            document.getElementById("WinLose-message").textContent = "Tie";
+            // console.log("tie");
         }
         else if ((humanchoice === 0 && computerchoice === 2) ||
-                (humanchoice === 1 && computerchoice === 0) ||
-                (humanchoice === 2 && computerchoice === 1)) {
+                 (humanchoice === 1 && computerchoice === 0) ||
+                 (humanchoice === 2 && computerchoice === 1)) {
 
-            console.log("Human wins");
+            document.getElementById("WinLose-message").textContent = "Human wins";
+            // console.log("Human wins");
         }
         else {
-            console.log("computer wins");
+            document.getElementById("WinLose-message").textContent = "Computer wins";
+            // console.log("Computer wins");
         }
     }
 
