@@ -59,7 +59,7 @@ function getComputerChoice(max) {
         return "Scissor";
     }
 }
-
+ 
 // TODO: put these two lines inside getHumanChoice function, so that, by clicking any of 3 buttons, both Computer & Human's result is showing.
 // let computer = getComputerChoice(3);
 // document.getElementById("computer-message").textContent = "Computer clicked " + computer;
