@@ -44,6 +44,20 @@ function resetStartButton() {
     btn2.onclick = startGame;
 }
 
+// !! "/" shortcut button:
+document.addEventListener("keydown", function(event) {
+    if (event.key === "/") {
+        event.preventDefault(); // stops typing "/" in the input
+        document.getElementById("rounds-input").focus();
+    }
+});
+
+// !! "enter" shortcut button:
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("start-button").click();
+    }
+});
 
 // !! startGame Function:
 function startGame() {
