@@ -59,6 +59,9 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+// put alt r/p/s shortcut here.
+
+
 // !! startGame Function:
 function startGame() {
     totalRounds = Number(document.getElementById("rounds-input").value);    
