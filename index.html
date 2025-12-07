@@ -2,41 +2,68 @@
 <html lang="en-US">
   <head> 
     <meta charset="utf-8" />
-    <title>Number guessing game</title>
+    <title>Rock Paper Scissor</title>
     <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Library (For "icon", "C" ) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Header's Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
   </head> 
   <body>
-    <div class="full">
-      <div class="counter">
-        <p id="Counter-message-tie"></p>
-        <p id="Counter-message-human"></p>
-        <p id="Counter-message-computer"></p>
+    <div class="header-main">
+      <header class="header">
+        <h1 class="title">ROCK</h1>
+        <h1 class="title">Paper</h1>
+        <h1 class="title">Scissor</h1>
+      </header>
+
+      <div class="main">
+        <div class="counter-input">
+          <div class="counter">
+            <p id="Counter-message-human"></p>
+            <p id="Counter-message-computer"></p>
+            <p id="Counter-message-tie"></p>
+          </div>
+
+          <div class="input-start-reload">
+            <input id="rounds-input" type="number" min="1" placeholder="How many rounds?" oninput="resetStartButton()">
+            <button id="start-button" onclick="startGame()">Start Game</button>
+            <button class="restart-button" onclick="Restart()">Reload</button><br><br>
+          </div>
+        </div>
+
+        <div class="r-p-c-button">
+          <button onclick="getHumanChoice(0)" class="rock-btn">
+            <i class="fa-solid fa-hand-back-fist fa-rotate-90"></i>
+          </button>
+          <button onclick="getHumanChoice(1)" class="paper-btn">
+            <i class="fa-solid fa-hand fa-rotate-90"></i>
+          </button>
+          <button onclick="getHumanChoice(2)" class="scissor-btn">
+            <i class="fa-solid fa-scissors"></i>
+          </button>
+        </div>
+
+        <div class="computer-human-message">
+          <p id="human-message"></p>
+          <p id="computer-message"></p>
+        </div>
+
+        <div class="win-lose">
+          <p id="WinLose-message"></p><br><br><br>
+        </div>
+        
+        <div class="final">
+          <p id="final-result"></p>
+        </div>
       </div>
 
-      <div class="input-start-reload">
-        <input id="rounds-input" type="number" min="1" placeholder="How many rounds?" oninput="resetStartButton()">
-        <button id="start-button" onclick="startGame()">Start Game</button>
-        <button onclick="Restart()">Reload</button><br><br>
-      </div>
-
-      <div class="r-p-c-button">
-        <button onclick="getHumanChoice(0)">Rock</button>
-        <button onclick="getHumanChoice(1)">Paper</button>
-        <button onclick="getHumanChoice(2)">Scissor</button>
-      </div>
-
-      <div class="computer-human-message">
-        <p id="computer-message"></p>
-        <p id="human-message"></p>
-      </div>
-
-      <div class="win-lose">
-        <p id="WinLose-message"></p><br><br><br>
-      </div>
-      
-      <div class="final">
-        <p id="final-result"></p>
+      <div class="footer">
+        Copyright <i class="fa-regular fa-copyright"></i> 
+        2025 Tashdid-Turjo 
+        <a href="https://github.com/Tashdid-Turjo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github fa-flip"></i></a>
       </div>
     </div>
 

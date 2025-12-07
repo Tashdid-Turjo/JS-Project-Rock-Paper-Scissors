@@ -28,9 +28,9 @@ function resetStartButton() {
     computerScore = 0;
 
     // Reset counter texts on the page
-    document.getElementById("Counter-message-tie").textContent = "Tie: " + tieScore;
+    document.getElementById("Counter-message-tie").textContent = "Tie   : " + tieScore;
     document.getElementById("Counter-message-computer").textContent = "Computer: " + computerScore;
-    document.getElementById("Counter-message-human").textContent = "Human: " + humanScore;
+    document.getElementById("Counter-message-human").textContent = "Human  : " + humanScore;
 
     // Clear previous messages
     document.getElementById("computer-message").textContent = "";
@@ -131,7 +131,7 @@ function getHumanChoice(humanchoice) {
     // !! Win/Lose (Nested Function):
     function WinLose() {
         if (humanchoice === computerchoice) {
-            document.getElementById("WinLose-message").textContent = "Tie";
+            document.getElementById("WinLose-message").textContent = "This round Tied";
             tieScore += 1;
             document.getElementById("Counter-message-tie").textContent = "Tie: " + tieScore;
         }
@@ -139,12 +139,12 @@ function getHumanChoice(humanchoice) {
                  (humanchoice === 1 && computerchoice === 0) ||
                  (humanchoice === 2 && computerchoice === 1)) {
 
-            document.getElementById("WinLose-message").textContent = "Human wins";
+            document.getElementById("WinLose-message").textContent = "Human wins this round";
             humanScore += 1;
             document.getElementById("Counter-message-human").textContent = "Human: " + humanScore;
         }
         else {
-            document.getElementById("WinLose-message").textContent = "Computer wins";
+            document.getElementById("WinLose-message").textContent = "Computer wins this round";
             computerScore += 1;
             document.getElementById("Counter-message-computer").textContent = "Computer: " + computerScore;
         }
@@ -158,14 +158,25 @@ function getHumanChoice(humanchoice) {
     // Final Result:
     if (roundsPlayed === totalRounds) {
         let finalMsg;
+        const finalBox = document.querySelector(".final");
+
+        // Removes previous color classes
+        finalBox.classList.remove("win", "lose", "tie");
+
         if (humanScore > computerScore) {
             finalMsg = "Final result: You win the game!";
+            // Adds different colors for different conditions:
+            finalBox.classList.add("win");
         }
         else if (humanScore < computerScore) {
             finalMsg = "Final result: Computer wins the game!";
+            // Adds different colors for different conditions:
+            finalBox.classList.add("lose");
         }
         else {
             finalMsg = "Final result: It's a tie overall!";
+            // Adds different colors for different conditions:
+            finalBox.classList.add("tie");
         }
         
         document.getElementById("final-result").textContent = finalMsg;
@@ -195,3 +206,26 @@ choices[1] = "Paper"
 choices[2] = "Scissor"
 
 */
+
+
+
+// // Final Result:
+//     if (roundsPlayed === totalRounds) {
+//         let finalMsg;
+//         if (humanScore > computerScore) {
+//             finalMsg = "Final result: You win the game!";
+//         }
+//         else if (humanScore < computerScore) {
+//             finalMsg = "Final result: Computer wins the game!";
+//         }
+//         else {
+//             finalMsg = "Final result: It's a tie overall!";
+//         }
+        
+//         document.getElementById("final-result").textContent = finalMsg;
+
+//         // Changing Restart Game button -> Start Game Button:
+//         const btn = document.getElementById("start-button");
+//         btn.textContent = "Start Game";
+//         btn.onclick = startGame;
+//     }
