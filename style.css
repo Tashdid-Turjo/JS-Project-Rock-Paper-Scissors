@@ -172,6 +172,8 @@ body {
     justify-content: center; */
 }
 
+
+/* ---JS Work--- */
 .final.win {
     background-color: #b7f5c3;
     color: #0f7a28;
@@ -186,14 +188,8 @@ body {
     background-color: #c9dcff;
     color: #003d99;
 }
+/* ---JS Work--- */
 
-.final-result {
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    /* padding: 2px; */
-    /* margin: 0; */
-}
 
 .footer {
     /* TODO: Extra properties to see what happens in footer. */
