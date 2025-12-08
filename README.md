@@ -21,7 +21,7 @@ This is my first raw project, created while learning JavaScript and DOM manipula
 
 
 ## 🕹️ Live Demo
-You can try out the live version of this project [Rock-Paper-Scissors](https://tashdid-turjo.github.io/JS-Project-Rock-Paper-Scissors/).
+You can try out the live version of this project: [Rock-Paper-Scissors](https://tashdid-turjo.github.io/JS-Project-Rock-Paper-Scissors/).
 
 📂 Technologies Used
 
