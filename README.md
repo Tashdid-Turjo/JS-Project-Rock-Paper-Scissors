@@ -51,4 +51,4 @@ It's not a full application, but it is more than a simple task — it qualifies 
 ---
 
 ## 📸 Screenshots:
-![Game Preview](screenshot.png)
+![Game Preview](Rock-Paper-Scissor-Project-Demo.png)
