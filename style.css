@@ -1,6 +1,5 @@
-/* 1. r/p/s/github-logo's hover button(after putting the mouse in the button) */
-/* 2. For final result, a pop-up message will appear about who won/tie soon. */
-
+/* 1. For final result, a pop-up message will appear about who won/tie soon. */
+/* 2. Instead of message for human/computer won, it should appear icon, like- human selected rock, computer selected paper. */
 
 /* TODO: Correct way to fix page becoming too wide & too long. */
  * {
@@ -156,7 +155,7 @@ body {
     font-size: 20px;
 }
 
-.r-p-c-button {
+.r-p-s-button {
     margin: 10px;
     padding: 10px;
     display: flex;
@@ -170,6 +169,13 @@ body {
 .scissor-btn {
     /* background: box; */
     /* background-color: rgb(255, 174, 0); */
+    
+    /* NEW */
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+    /* --- */
+
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -179,19 +185,70 @@ body {
 }
 
 .rock-btn {
-    background-color: #ff5722; /* Orange */
+    background-color: #ff5722;
     color: #FFFFFF;
+    border: 2px solid #a30000;
 }
 
 .paper-btn {
-    background-color: #556df5; /* Purple */
+    background-color: #556df5;
     color: #FFFFFF;
+    border: 2px solid #003d99;
 }
 
 .scissor-btn {
-    background-color: #673AB7; /* Amber */
+    background-color: #946add;
     color: #FFFFFF;
+    border: 2px solid #673AB7;
 }
+
+
+/* TODO: Rock Paper Scissor button/icon Hovering Style */
+.code-rain {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 0, 0) 0%,
+    rgba(0, 255, 0, 0.2) 50%,
+    rgba(0, 255, 0, 0) 100%
+  );
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* 360 degree spin */
+.matrix:hover .fa-solid {
+  opacity: 1;
+  
+  /* TODO: this rotates infinite, but after 360degree rotate, it pause for a short moment. Thus, created my own spin animation- "spin-fast" then added keyframes. */
+  /* animation: fa-spin 1s infinite; */
+  
+  animation: spin-fast 0.8s linear infinite;
+}
+
+@keyframes spin-fast {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* rain type */
+.matrix:hover .code-rain {
+  opacity: 1;
+  animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+/* TODO:---------------------------- */
+
 
 .computer-human-message,
 .win-lose,
