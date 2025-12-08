@@ -13,9 +13,9 @@ This is my first raw project, created while learning JavaScript and DOM manipula
 - Round selection and automatic scoring
 - Smooth UI animations (fade-in/out, icon movement, etc.)
 - Keyboard shortcuts
---- / → focus input
---- Enter → start game
---- R, P, S → choose Rock/Paper/Scissors
+  - `/` → Focus input
+  - `Enter` → Start game
+  - `R`, `P`, `S` → Choose Rock / Paper / Scissors
 - Responsive interface with custom design
 - Fully deployed on GitHub Pages
 
