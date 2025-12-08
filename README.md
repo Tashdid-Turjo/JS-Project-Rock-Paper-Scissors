@@ -8,6 +8,11 @@ This is my first raw project, created while learning JavaScript and DOM manipula
 
 ---
 
+## 🕹️ Live Demo
+You can try out the live version of this project: [Rock-Paper-Scissors](https://tashdid-turjo.github.io/JS-Project-Rock-Paper-Scissors/).
+
+---
+
 ## 🚀 Features
 
 - Play Rock, Paper, Scissors against the computer
@@ -19,11 +24,6 @@ This is my first raw project, created while learning JavaScript and DOM manipula
   - `R`, `P`, `S` → Choose Rock / Paper / Scissors
 - Responsive interface with custom design
 - Fully deployed on GitHub Pages
-
----
-
-## 🕹️ Live Demo
-You can try out the live version of this project: [Rock-Paper-Scissors](https://tashdid-turjo.github.io/JS-Project-Rock-Paper-Scissors/).
 
 ---
 
