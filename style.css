@@ -1,7 +1,17 @@
-/* 1. In JS, shortcut button for keyboard, like- "R", "P", "S" will be added soon. */
-/* 2. after clicking start button, the start button should disappear / will write a text to req user to click r/p/s. */
-/* 3. r/p/s/github-logo's hover button(after putting the mouse in the button) */
+/* 1. after clicking start button, the start button should disappear / will write a text to req user to click r/p/s. */
+/* 2. r/p/s/github-logo's hover button(after putting the mouse in the button) */
+/* 3. For final result, a pop-up message will appear about who won/tie soon. */
 
+/* TODO: Correct way to fix page becoming too wide & too long. */
+ * {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+/* TODO:---------------------------- */
 
 body {
     background-color: rgb(255, 174, 0);
@@ -18,12 +28,15 @@ body {
     align-items: center; */
 }
 
-.header-main {
+.header-main-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 30px;
+    
+    /* TODO: To control shortcuts in the right/any side of the page. */
+    position: relative;
 }
 
 .header {
@@ -100,6 +113,17 @@ body {
     font-size: 20px;
 }
 
+/* TODO: Animation for Start Game Button in js's "fade-out". */
+.fade-out {
+    animation: fadeOut 0.4s forwards ease-out;
+}
+
+@keyframes fadeOut {
+    from {opacity: 1; }
+    to   {opacity: 0; transform: scale(0.95); }
+}
+/* TODO:-------------------------- */
+
 .r-p-c-button {
     margin: 10px;
     padding: 10px;
@@ -156,13 +180,12 @@ body {
     color: red; */
     /* height: 60px; */
     /* width: 250px; */
+    /* padding: 10px; */
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
-    padding: 10px;
 
-    /* padding: 2px;
-    margin-top: 2px;
+    /* margin-top: 2px;
     margin-bottom: 2px; */
 
     /* display: flex;
@@ -171,7 +194,7 @@ body {
 }
 
 
-/* ---JS Work--- */
+/* TODO: JS Work(It's not in HTML) */
 .final.win {
     background-color: #b7f5c3;
     color: #0f7a28;
@@ -186,7 +209,47 @@ body {
     background-color: #c9dcff;
     color: #003d99;
 }
-/* ---JS Work--- */
+/* TODO:--------------------------- */
+
+
+.shortcut {
+    text-align: left;
+    color: rgb(90, 45, 0);
+}
+
+/* TODO: To control "shorcut" separately but inside "main-header-footer" parent. So that, even if align-items, justify-content is center, it will be controlled manually. */
+#alt-head {
+    position: absolute;
+    bottom: 230px;
+    left: 1740px;
+    font-size: 18px;
+    font-weight: bold;
+
+    /* TODO: Adding right property and similar to all alt1,2,3 will eliminate the "text-align: left;" under .shortcut */
+    /* right: 15px; */
+}
+
+#alt1 {
+    position: absolute;
+    /* right: 15px; */
+    bottom: 200px;
+    left: 1740px;
+}
+
+#alt2 {
+    position: absolute;
+    /* right: 15px; */
+    bottom: 170px;
+    left: 1740px;
+}
+
+#alt3 {
+    position: absolute;
+    /* right: 15px; */
+    bottom: 140px;
+    left: 1740px;
+}
+/* TODO:--------------------------- */
 
 
 .footer {
@@ -203,7 +266,13 @@ body {
     font-size: 25px;
     gap: 20px;
     color: rgb(90, 45, 0);
-    height: 120px;
+
+    /* TODO: By increase/decrease it, it will go up/down of the page. */
+    height: 95px;
+
+    /* TODO:  This won't work here. */
+    /* flex-grow: 0; */
+    /* flex-shrink: 0; */
 }
 
 

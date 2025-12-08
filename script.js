@@ -44,39 +44,70 @@ function resetStartButton() {
     btn2.onclick = startGame;
 }
 
-// !! "/" shortcut button:
+
+// !! Shortcut buttons:
 document.addEventListener("keydown", function(event) {
+    // TODO: "/" shortcut button:
     if (event.key === "/") {
-        event.preventDefault(); // stops typing "/" in the input
+        event.preventDefault();     // stops typing "/" in the input
         document.getElementById("rounds-input").focus();
     }
-});
-
-// !! "enter" shortcut button:
-document.addEventListener("keydown", function(event) {
+    // TODO: "enter" shortcut button:    
     if (event.key === "Enter") {
         document.getElementById("start-button").click();
     }
-});
 
-// put alt r/p/s shortcut here.
+    // TODO: "alt + r/p/s" shorcut button:
+        if (event.altKey) {
+            if (event.key === 'r' || event.key === 'R') {
+                getHumanChoice(0);
+                // event.preventDefault();                      // No needed.
+                // console.log("alt + r/R pressed");            // To see in the console.
+                // document.getElementById("rock-btn").click(); // This doesn't work.
+            }
+            else if (event.key === 'p' || event.key === 'P') {
+                getHumanChoice(1);
+                // event.preventDefault();
+                // console.log("alt + p/P pressed");
+                // document.getElementById("paper-btn").click();
+            }
+            else if (event.key === 's' || event.key === 'S') {
+                getHumanChoice(2);
+                // event.preventDefault();
+                // console.log("alt + s/S pressed");
+                // document.getElementById("scissor-btn").click();
+            }
+        }
+});
 
 
 // !! startGame Function:
 function startGame() {
     totalRounds = Number(document.getElementById("rounds-input").value);    
-        if (!totalRounds || totalRounds <= 0) {
-            alert("Please enter a valid number of rounds.");
-            totalRounds = 0;
-            return;
-        }
+    
+    if (!totalRounds || totalRounds <= 0) {
+        alert("Please enter a valid number of rounds.");
+        totalRounds = 0;
+        return;
+    }
 
+    // Fade-out animation after clicking "Start Game button". "fade-out" doesn't need to add in the html part.
+    const btn = document.getElementById("start-button");
+    btn.classList.add("fade-out");
+
+    // (DOESN'T WORK) This makes the Start button completely disappear from the page.
+    // document.getElementById("start-button").classList.add("hidden");
+
+       
     // Reset counters in memory
     roundsPlayed = 0;
     tieScore = 0;
     computerScore = 0;
     humanScore = 0;
     
+    // (DOESN'T WORK) To show it again later
+    // document.getElementById("start-button").classList.remove("hidden");
+ 
     // Reset counter texts on the page
     document.getElementById("Counter-message-tie").textContent = "Tie: " + tieScore;
     document.getElementById("Counter-message-computer").textContent = "Computer: " + computerScore;
@@ -87,6 +118,8 @@ function startGame() {
     document.getElementById("human-message").textContent = "";
     document.getElementById("WinLose-message").textContent = "";
     document.getElementById("final-result").textContent = "";
+
+    
 }
 
 
@@ -127,7 +160,7 @@ function getHumanChoice(humanchoice) {
     // 3) NOW it’s safe to convert Start → Restart (game is actually running):
     const btn = document.getElementById("start-button");
     if(btn.textContent === "Start Game") {
-        btn.textContent = "Restart Game";
+        btn.textContent = "🎮 GAME ACTIVE";
         btn.onclick = Restart;
     }
 
