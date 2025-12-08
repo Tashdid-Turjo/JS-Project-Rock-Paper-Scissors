@@ -6,6 +6,7 @@ The game also supports round limits, score tracking, animations, and keyboard in
 
 This is my first raw project, created while learning JavaScript and DOM manipulation.
 
+---
 
 ## 🚀 Features
 
@@ -19,9 +20,12 @@ This is my first raw project, created while learning JavaScript and DOM manipula
 - Responsive interface with custom design
 - Fully deployed on GitHub Pages
 
+---
 
 ## 🕹️ Live Demo
 You can try out the live version of this project: [Rock-Paper-Scissors](https://tashdid-turjo.github.io/JS-Project-Rock-Paper-Scissors/).
+
+---
 
 📂 Technologies Used
 
@@ -30,6 +34,7 @@ You can try out the live version of this project: [Rock-Paper-Scissors](https://
 - JavaScript (ES6)
 - Font Awesome (icons)
 
+---
 
 ## 📌 Notes
 
@@ -43,6 +48,7 @@ It's not a full application, but it is more than a simple task — it qualifies 
 ✔ Keyboard shortcuts
 ✔ GitHub Pages Deployment
 
+---
 
-## Screenshots:
+## 📸 Screenshots:
 ![Game Preview](screenshot.png)
