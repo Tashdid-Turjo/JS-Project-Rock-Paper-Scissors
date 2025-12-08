@@ -91,9 +91,26 @@ function startGame() {
         return;
     }
 
-    // Fade-out animation after clicking "Start Game button". "fade-out" doesn't need to add in the html part.
+    // Fade-out animation after clicking "Start Game button". N.B: "fade-out" doesn't need to add in the html part.
     const btn = document.getElementById("start-button");
+    
+    // 1. fade out
+    btn.classList.remove("fade-in");
     btn.classList.add("fade-out");
+
+    setTimeout(() => {
+
+    // 2. change text after fade-out completes
+    btn.textContent = "🎮 GAME ACTIVE";
+    btn.onclick = Restart;
+
+    // 3. fade in the new button
+    btn.classList.remove("fade-out");
+    btn.classList.add("fade-in");
+
+}, 400); // must match fadeOut duration
+
+
 
     // (DOESN'T WORK) This makes the Start button completely disappear from the page.
     // document.getElementById("start-button").classList.add("hidden");
@@ -157,12 +174,13 @@ function getHumanChoice(humanchoice) {
         return;
     }
 
-    // 3) NOW it’s safe to convert Start → Restart (game is actually running):
-    const btn = document.getElementById("start-button");
-    if(btn.textContent === "Start Game") {
-        btn.textContent = "🎮 GAME ACTIVE";
-        btn.onclick = Restart;
-    }
+    // TODO: No need to put it here, as i putted it inside StartGame Function.
+    // // 3) NOW it’s safe to convert Start → Restart (game is actually running):
+    // const btn = document.getElementById("start-button");
+    // if(btn.textContent === "Start Game") {
+    //     btn.textContent = "🎮 GAME ACTIVE";
+    //     btn.onclick = Restart;
+    // }
 
     // Shows human's choice:
     if (humanchoice === 0) {
