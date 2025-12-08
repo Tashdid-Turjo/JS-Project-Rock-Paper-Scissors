@@ -37,6 +37,7 @@ function resetStartButton() {
     document.getElementById("human-message").textContent = "";
     document.getElementById("WinLose-message").textContent = "";
     document.getElementById("final-result").textContent = "";
+    document.getElementById("instruction-message").textContent = "";
 
     // for making the button back to "Start Game"
     const btn2 = document.getElementById("start-button");
@@ -91,18 +92,25 @@ function startGame() {
         return;
     }
 
-    // Fade-out animation after clicking "Start Game button". N.B: "fade-out" doesn't need to add in the html part.
+    // TODO: Weapon-message
+    document.getElementById("instruction-message").textContent = "⚔️ Now choose your weapon!";
+
+
+    // TODO: Fade-out animation after clicking "Start Game button". N.B: "fade-out" doesn't need to add in the html part.
     const btn = document.getElementById("start-button");
     
     // 1. fade out
     btn.classList.remove("fade-in");
     btn.classList.add("fade-out");
 
+    // !! setTimeout Function (Nested Function):
     setTimeout(() => {
-
     // 2. change text after fade-out completes
     btn.textContent = "🎮 GAME ACTIVE";
-    btn.onclick = Restart;
+    btn.disabled = true;    // button won't be clickable.
+
+    // TODO: Omitted the "Game Active" button to work as restart.
+    // btn.onclick = Restart;
 
     // 3. fade in the new button
     btn.classList.remove("fade-out");
@@ -110,11 +118,8 @@ function startGame() {
 
 }, 400); // must match fadeOut duration
 
-
-
     // (DOESN'T WORK) This makes the Start button completely disappear from the page.
     // document.getElementById("start-button").classList.add("hidden");
-
        
     // Reset counters in memory
     roundsPlayed = 0;
@@ -134,9 +139,7 @@ function startGame() {
     document.getElementById("computer-message").textContent = "";
     document.getElementById("human-message").textContent = "";
     document.getElementById("WinLose-message").textContent = "";
-    document.getElementById("final-result").textContent = "";
-
-    
+    document.getElementById("final-result").textContent = ""; 
 }
 
 
@@ -246,12 +249,15 @@ function getHumanChoice(humanchoice) {
             // Adds different colors for different conditions:
             finalBox.classList.add("tie");
         }
-        
-        document.getElementById("final-result").textContent = finalMsg;
 
-        // Changing Restart Game button -> Start Game Button:
+        document.getElementById("final-result").textContent = finalMsg;
+        // After showing the Final Result, the weapon message will be disappeared.
+        document.getElementById("instruction-message").textContent = "";
+
+        // TODO: Changing "Game Active" button(which was unclickable) -> "Start Game" Button(will be clickable):
         const btn = document.getElementById("start-button");
         btn.textContent = "Start Game";
+        btn.disabled = false;
         btn.onclick = startGame;
     }
 
@@ -274,26 +280,3 @@ choices[1] = "Paper"
 choices[2] = "Scissor"
 
 */
-
-
-
-// // Final Result:
-//     if (roundsPlayed === totalRounds) {
-//         let finalMsg;
-//         if (humanScore > computerScore) {
-//             finalMsg = "Final result: You win the game!";
-//         }
-//         else if (humanScore < computerScore) {
-//             finalMsg = "Final result: Computer wins the game!";
-//         }
-//         else {
-//             finalMsg = "Final result: It's a tie overall!";
-//         }
-        
-//         document.getElementById("final-result").textContent = finalMsg;
-
-//         // Changing Restart Game button -> Start Game Button:
-//         const btn = document.getElementById("start-button");
-//         btn.textContent = "Start Game";
-//         btn.onclick = startGame;
-//     }
