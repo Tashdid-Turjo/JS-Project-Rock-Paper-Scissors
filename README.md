@@ -41,12 +41,12 @@ You can try out the live version of this project: [Rock-Paper-Scissors](https://
 This was created as my first small project while learning JavaScript.
 It's not a full application, but it is more than a simple task — it qualifies as a small beginner project, especially because it includes:
 
-- ✔ DOM Manipulation
-- ✔ Event Handling
-- ✔ Animations
-- ✔ Game Logic
-- ✔ Keyboard shortcuts
-- ✔ GitHub Pages Deployment
+✔ DOM Manipulation <br>
+✔ Event Handling <br>
+✔ Animations <br>
+✔ Game Logic <br>
+✔ Keyboard shortcuts <br>
+✔ GitHub Pages Deployment <br>
 
 ---
 
