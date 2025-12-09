@@ -27,7 +27,7 @@ You can try out the live version of this project: [Rock-Paper-Scissors](https://
 
 ---
 
-📂 Technologies Used
+## 📂 Technologies Used
 
 - HTML5
 - CSS3 (animations, flexbox, transitions)
